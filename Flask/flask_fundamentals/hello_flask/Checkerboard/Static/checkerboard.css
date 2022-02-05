@@ -1,0 +1,27 @@
+* {
+    margin: -2px;
+    padding: -2px;
+}
+
+.white {
+    display: inline-block;
+
+    height: 100px;
+    width: 100px;
+    background-color: #ffffe0;
+}
+
+.black {
+    display: inline-block;
+
+    height: 100px;
+    width: 100px;
+    background-color: #556b2f;
+}
+
+.container {
+    display: inline-block;
+    border: 2px solid black;
+    width: 798px;
+    height: 796px;
+}
