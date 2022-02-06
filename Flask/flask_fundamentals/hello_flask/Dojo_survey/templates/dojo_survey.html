@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="margin-left: 200px;margin-top: 100px;">
+    <form action="/result" method="post"
+        style="border: 2px solid black; font-size: 20px; width: 465px;padding-left: 20px;">
+        <p> Your Name: <input type="text" name="name"></p><br>
+        <p> Dojo Location: <select name="location" id="">
+                <option value="San Jose">San Jose</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Arizona">Arizona</option>
+                <option value="California">California</option>
+            </select></p><br>
+        <p> Favourite language: <select name="fav" id="">
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="Ruby">Ruby</option>
+                <option value="PHP">PHP</option>
+            </select></p><br>
+        <p>What is your gender: </p>
+        <input type="radio">Male
+        <input type="radio">Female
+        <input type="radio"> I prefer not to say
+
+        <p> What support options have you used:</p>
+        <input type="checkbox" name="d_enabled">Phone <br>
+        <!-- <input type="checkbox" name="d_enabled">Email <br>
+        <input type="checkbox" name="d_enabled">Chat <br>
+        <input type="checkbox" name="d_enabled">Community <br>
+        <input type="checkbox" name="d_enabled">Documentation <br> -->
+
+        <p> comment (optional): <br> <textarea name="comment" id="" cols="30" rows="10"></textarea></p>
+
+        <p> <input type="submit"></p>
+    </form>
+
+</body>
+
+</html>

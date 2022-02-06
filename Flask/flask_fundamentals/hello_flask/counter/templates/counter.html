@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The counter: {{  session['counter']  }}</h1>
+    <form action="/add2">
+        <button># of visits +2</button>
+    </form>
+    <form action="/reset">
+        <button>reset counter</button>
+    </form>
+
+
+    <form action="/{{some_num}}">
+        <button>choose any #</button>
+    </form>
+
+    <h2>number of visits: {{   session['visits']  }}</h2>
+
+
+</body>
+
+</html>
