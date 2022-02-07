@@ -1,0 +1,21 @@
+form {border: 2px solid black;
+    display: inline-block;
+    padding: 70px;
+    font-size: 20px;
+    text-align: left;}
+
+
+button{font-size: 20px;
+    margin-top: 20px;}
+
+select option{font-size: 20px}
+
+
+input {margin: 20px;
+    font-size: 20px;}
+
+select{margin: 20px;
+    font-size: 20px;}
+
+textarea{margin-top: 20px;
+    font-size: 20px;}

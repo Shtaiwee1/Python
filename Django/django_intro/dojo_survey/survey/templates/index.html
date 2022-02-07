@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <form action="/result" method="post">
+        {% csrf_token %}
+        <label for="">Your Name:</label>
+        <input type="text" name="name"><br>
+        <label for="">Your gender:</label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <input type="radio" name="gender" value="I prefer not to say">I prefer not to say <br>
+        <label for="">Would you like to get updates:</label>
+        <input type="checkbox" name="check" value="Yes">Yes <br>
+        <input type="checkbox" name="check" value="No">No <br>
+        <input type="checkbox" name="check" value="maybe">maybe <br>
+        <input type="checkbox" name="check" value="whatever">whatever <br>
+        <input type="checkbox" name="check" value="shut up">shut up <br>
+        <input type="checkbox" name="check" value="don't be silly">don't be silly<br>
+        <label for="">Dojo Location:</label>
+        <select name="location" id="">
+            <option value="San Jose">San Jose</option>
+            <option value="Arizona">Arizona</option>
+            <option value="California">California</option>
+            <option value="Burbank">Burbank</option>
+        </select><br>
+        <label for="">Favourite Language:</label>
+        <select name="favourite" id="">
+            <option value="Java">Java</option>
+            <option value="C#">C#</option>
+            <option value="C++">C++</option>
+            <option value="Python">Python</option>
+        </select><br>
+        <label for="">Comment(optional):</label><br>
+        <textarea name="comment" id="" cols="30" rows="10"></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
