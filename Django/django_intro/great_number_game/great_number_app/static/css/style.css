@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Roboto&display=swap');
+
+
+body {text-align: center; font-size: 25px;font-family:'balsamiq-sans',sans-serif}
+
+input{font-size: 25px}
+
+button{font-size: 25px;margin-top:20px}
+
+
+.first , .second {font-size: 40px;
+    background-color: #cf2a27;
+    color: white;
+    padding: 100px;
+    text-align: center;
+    font-weight: 700;
+    width: 300px;
+    height:150px;
+    display: inline-block;
+    margin-top: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;}
+
+.third{font-size: 40px;
+    background-color: #009e0f;
+    color: white;
+    padding: 100px;
+    text-align: center;
+    font-weight: 700;
+    width: 300px;
+    height:150px;
+    display: inline-block;
+    margin-top: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;}
+
+
+    .four{font-size: 40px;
+        background-color: #009e0f;
+        color: white;
+        padding: 100px;
+        text-align: center;
+        font-weight: 700;
+        width: 300px;
+        height:250px;
+        display: inline-block;
+        margin-top: 20px;
+        border: 2px solid black;
+        margin-bottom: 20px;}
+

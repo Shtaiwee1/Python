@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Winner name</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>{{request.session.z}}</td>
+            <td>Number of attempts is:{{request.session.counter}}</td>
+
+        </tr>
+        <tr>
+            <td>Michael</td>
+            <td>Number of attempts is:4</td>
+        </tr>
+        <tr>
+            <td>Ahmad</td>
+            <td>Number of attempts is:5</td>
+        </tr>
+        <tr>
+            <td>Randy</td>
+            <td>Number of attempts is:6</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

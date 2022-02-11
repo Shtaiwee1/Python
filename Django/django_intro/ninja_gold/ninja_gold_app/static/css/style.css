@@ -1,0 +1,13 @@
+
+
+
+
+body{width: 1100px;font-size: 20px;font-family: sans-serif;}
+
+.container{display: flex;justify-content: space-between;margin-top: 20px;margin-left: 100px;}
+
+.place{border: 2px solid black;padding: 30px;}
+
+label {margin-left: 60px;margin-top: 20px;}
+
+.form-control{margin-top: 0px;margin-left: 50px;}

@@ -28,7 +28,7 @@ def destroy(request,number):
 
 
 def json_method(request):
-    return JsonResponse({"response": "JSON response from json_method", "status": True})
+    return JsonResponse({"title": "my first blog", "content": 'lorem, ipsum' })
 
 
 

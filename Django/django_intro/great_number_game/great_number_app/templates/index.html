@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I'm thinking of a number between 1 and 100 <br> <span>take a guess!</span> </p>
+    <h2>number of attempts:{{request.session.counter}}</h2>
+    {% if request.session.x > request.session.y and request.session.counter is not 5 %}
+    <div class="first">
+        <p>Too low!</p>
+    </div>
+    {% elif  request.session.x < request.session.y and request.session.counter is not 5 %}
+    <div class="second">
+        <p>Too high!</p>
+    </div>
+    {% elif  request.session.x == request.session.y and request.session.counter is not 5 %}
+    <div class="third">
+        <p>Bingo!</p>
+        <p>The answer is: {{request.session.x}}</p>
+
+    </div>
+
+
+    <form action="/leaderboard" method="post">
+        {% csrf_token %}
+        <label for="">Enter your name:</label>
+        <input type="text" name="user" id="">
+        <a href="http://127.0.0.1:8000/leaderboard">Leaderboards</a>
+        <button type="submit">submit</button>
+    </form>
+    {% endif %}
+
+    {% if request.session.counter == 5  %}
+    <div class="four">
+        <p>You lose!</p>
+        <p> {{request.session.x}} was the number!</p>
+        <form action="/destroy_session">
+            <button type="submit">play again</button>
+        </form>
+    </div>
+
+
+    <br>
+    {% endif %}
+    {% if request.session.counter is not 5 and request.session.x != request.session.y %}
+    <form action="/result" method="post">
+        {% csrf_token %}
+        <input type="text" name="guess"><br>
+        <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+
+
+
+    {% comment %}
+    {% while request.session.attempts == 0   %}
+
+    <p>You Lose</p>
+    {% elif request.session.attempts is not 0 %}
+    {% continue %}
+
+    {% endwhile %}
+    {% endcomment %}
+
+
+
+
+
+</body>
+
+</html>
