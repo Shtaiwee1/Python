@@ -1,0 +1,33 @@
+
+call "E:\Axsos_Academy\Python\my_environments\djangopy3Env\Scripts\activate"
+
+django-admin startproject users_shell
+
+python manage.py startapp users_app
+
+build the table of user
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py shell
+
+from users_app.models import User
+
+Users.objects.create(first_name="Michael",last_name="John",email_address="Michael@yahoo.com",age="30"
+
+User.objects.all()
+User.objects.last()
+User.objects.first()
+
+
+User.objects.get(id=2).delete()
+
+x=User.objects.get(id=1)
+x.first_name="Kamal"
+x.save()
+
+
+User.objects.all().order_by("first_name")
+User.objects.all().order_by("-first_name")

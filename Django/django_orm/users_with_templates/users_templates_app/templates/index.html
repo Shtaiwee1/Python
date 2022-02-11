@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h1>All the Users</h1>
+    <div class="container">
+        <ul>
+            <li class="head">id</li>
+            {% for User in all_the_users  %}
+            <li class="idid">{{User.id}}</li>
+            {% endfor  %}
+        </ul>
+        <ul>
+            <li class="head">FIRST NAME</li>
+            {% for User in all_the_users  %}
+            <li class="first_name">{{User.first_name}}</li>
+            {% endfor  %}
+        </ul>
+        <ul>
+            <li class="head">LAST NAME</li>
+            {% for User in all_the_users  %}
+            <li class="last_name">{{User.last_name}}</li>
+            {% endfor  %}
+        </ul>
+        <ul>
+            <li class="head">EMAIL ADDRESS</li>
+            {% for User in all_the_users  %}
+            <li class="email">{{User.email_address}}</li>
+            {% endfor  %}
+        </ul>
+        <ul>
+            <li class="head">AGE</li>
+            {% for User in all_the_users  %}
+            <li class="age">{{User.age}}</li>
+            {% endfor  %}
+        </ul>
+    </div>
+
+
+    <div class="container2">
+        <h2>Add a User</h2>
+        <form action="/adduser" method="post">
+            {% csrf_token %}
+            <div class="info1">
+                <label for="">First Name:</label>
+                <input type="text" name="first_name">
+
+                <label for=""> Email:</label>
+                <input type="text" name="email">
+            </div>
+
+
+
+            <div class="info2">
+                <label for="">Last Name:</label>
+                <input type="text" name="last_name">
+
+                <label for="">Age:</label>
+                <input type="text" name="age">
+            </div>
+    </div>
+
+    <button type="submit">Add</button>
+    </form>
+    <form action="/delete">
+        <button type="submit">Reset</button>
+    </form>
+
+</body>
+
+</html>
