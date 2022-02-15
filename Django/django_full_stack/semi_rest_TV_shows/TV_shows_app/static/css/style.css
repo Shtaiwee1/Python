@@ -4,6 +4,8 @@ body{font-family: 'Balsamiq Sans';}
 
 .center-addshow{text-align: center;}
 
+ul{display: inline-block;}
+
 tr:nth-child(even) {
     background-color: #e6e6e6;
   }
