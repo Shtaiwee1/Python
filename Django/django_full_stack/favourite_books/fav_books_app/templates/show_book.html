@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div style="display: flex;justify-content: space-between;" class="welcome">
+        <h1 style="margin-left: 30px;">Welcome,{{current_user.first_name}} {{current_user.last_name }} </h1>
+        <a style="font-size: 25px;font-weight: 600;margin-right: 30px;" href="/clear">Log out</a>
+    </div>
+
+    <div style="display: flex;justify-content: space-between;" class="show_details">
+        <div class="book_details">
+
+            <p>{{books.title}}</p>
+            <p>Added by:{{books.uploaded_by.first_name}}{{books.uploaded_by.last_name}}</p>
+            <p>Added on:{{books.created_at}}</p>
+            <p>Last updated on:{{books.updated_at}}</p>
+            <p>Description:{{books.desc}}</p>
+
+        </div>
+        <div class="liked_by">
+            <p>Users who like this book</p>
+            <ul>{%for like in liked_by %}
+                <li>{{like.first_name}}{{like.last_name}}</li>
+                {% if like.id == current_user.id %}
+                <a href="/unfavourites/{{books.id}}/{{current_user.id}}">Un-Favourite</a>
+                {% endif %}
+                {% endfor%}
+                {% if  like.id != current_user.id    %}
+                <a href="/favourites/{{books.id}}/{{current_user.id}}">Add to favourites</a>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

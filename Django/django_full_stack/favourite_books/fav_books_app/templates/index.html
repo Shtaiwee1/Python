@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="display: flex;justify-content: space-evenly;">
+    <div class="reg_form">
+        <h1>Registration</h1>
+        {% if "coming_from" in request.session %}
+        {% if request.session.coming_from == 'REGISTER' %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        <form action="/process_reg" method="post">
+            {% csrf_token %}
+
+            <p><label for="firstname">First Name</label>
+                <input type="text" name="first_name"></p><br>
+
+            <p><label for="lastname">Last Name</label>
+                <input type="text" name="last_name"></p><br>
+
+            <p><label for="email">Email</label>
+                <input type="text" name="email"></p><br>
+
+            <p><label for="password">Password</label>
+                <input type="text" name="password"></p><br>
+
+            <p><label for="confirm">Confirm PW</label>
+                <input type="text" name="confirm"></p><br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <div class="login_form">
+
+        <h2>Login</h2>
+        {% if 'coming_from' in request.session %}
+        {% if request.session.coming_from == 'LOGIN' %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        <form action="/process_login" method="post">
+            {% csrf_token %}
+            <p><label for="email_login">Email</label>
+                <input type="text" name="email_login"></p><br>
+
+            <p><label for="password_login">Password</label>
+                <input type="text" name="password_login"></p>
+            <button style="margin-top: 20px;" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+
+</html>
